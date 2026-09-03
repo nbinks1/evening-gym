@@ -1,8 +1,8 @@
 // Temperature Conversion
 // F = C x 1.8 + 32
-function celciusToFahrenheit(celcius) {
+const celciusToFahrenheit = (celcius) => {
   return celcius * 1.8 + 32;
-}
+};
 
 console.log(celciusToFahrenheit(0)); // Should return 32
 
@@ -10,9 +10,9 @@ console.log(celciusToFahrenheit(0)); // Should return 32
 function isLongWord(string) {
   if (!string) return false;
 
-  string.split("");
+  let split = string.split("");
 
-  if (string.length >= 7) {
+  if (split.length >= 7) {
     return true;
   }
 
@@ -24,31 +24,27 @@ console.log(isLongWord("Hello")); // Should return false
 
 // Calculate total with tip
 function calculateTotalWithTip(billAmount, tipPercentage) {
-  if (
-    !tipPercentage ||
-    isNaN(tipPercentage) ||
-    !billAmount ||
-    isNaN(billAmount)
-  )
-    return;
+  if (isNaN(tipPercentage) || isNaN(billAmount)) return;
 
   return calculatePercentage(tipPercentage) * billAmount + billAmount;
 }
 
 // Helper Function for Calculate total with tip
-function calculatePercentage(n) {
-  if (n) {
-    return n / 100;
-  }
-}
+const calculatePercentage = (n) => n / 100;
 
-console.log(calculateTotalWithTip(50, 20)); // Should return 60
+console.log(calculateTotalWithTip(50, 0));
+
+const nums = [10, 20, 30];
 
 // Get last element in an array
-function getLastElementInArray(arr) {
+const getLastElementInArray = function (arr) {
   if (!Array.isArray(arr)) return;
 
-  return arr.pop();
-}
+  return arr[arr.length - 1];
+};
 
-console.log(getLastElementInArray([10, 20, 30, 40, 50, 60, 70])); // Should return 70
+console.log(getLastElementInArray(nums)); // Should return the last number
+
+const returnUndefined = () => {};
+
+console.log(returnUndefined()); // Should return undefined
